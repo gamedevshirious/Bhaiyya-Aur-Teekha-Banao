@@ -27,4 +27,4 @@ position = Vector2( 742.553, 375.997 )
 position = Vector2( 587.33, 376.425 )
 
 [node name="Puri" parent="." instance=ExtResource( 1 )]
-position = Vector2( 705.942, 252.978 )
+position = Vector2( 446.105, 292.5 )
