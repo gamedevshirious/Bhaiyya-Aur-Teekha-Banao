@@ -5,6 +5,7 @@ var picked = false
 
 var teekha = 0
 var meetha = 0
+var vatana = false
 
 func _on_Puri_mouse_entered():
 	mouse_inside = true

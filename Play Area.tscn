@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://stall_items/Puri/Puri.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stall_items/Matka/TeekhaPaani/TeekhaPaani.tscn" type="PackedScene" id=2]
@@ -10,18 +10,17 @@
 [ext_resource path="res://stall_items/ragda.png" type="Texture" id=8]
 [ext_resource path="res://stall_items/theylla.png" type="Texture" id=9]
 [ext_resource path="res://stall_items/customer.png" type="Texture" id=10]
-[ext_resource path="res://stall_items/spoon.png" type="Texture" id=11]
+[ext_resource path="res://stall_items/spoon/spoon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://stall_items/chatbox.png" type="Texture" id=12]
-[ext_resource path="res://stall_items/plate.png" type="Texture" id=13]
 
 [node name="Play Area" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="base" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.129412 )
-position = Vector2( 510.569, 301.413 )
 scale = Vector2( 0.534197, 0.55629 )
 texture = ExtResource( 5 )
+centered = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -33,16 +32,16 @@ position = Vector2( 334.245, 112.817 )
 texture = ExtResource( 10 )
 
 [node name="chatbox" type="Sprite" parent="customers/customer"]
-position = Vector2( 129.906, 8.47571 )
+position = Vector2( 127.787, 8.47571 )
 scale = Vector2( 1.5338, 1.41609 )
 texture = ExtResource( 12 )
 
 [node name="stall_items" type="Node2D" parent="."]
 
 [node name="shop" type="Sprite" parent="stall_items"]
-position = Vector2( 515.291, 299.135 )
-scale = Vector2( 0.533197, 0.552823 )
+scale = Vector2( 0.533197, 0.555548 )
 texture = ExtResource( 6 )
+centered = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -53,57 +52,37 @@ position = Vector2( 744.672, 414.138 )
 [node name="MeethaPaani" parent="stall_items" instance=ExtResource( 4 )]
 position = Vector2( 586.271, 410.328 )
 
-[node name="Puri" parent="stall_items" instance=ExtResource( 1 )]
-position = Vector2( 259.393, 536.756 )
-
 [node name="ragda" type="Sprite" parent="stall_items"]
 position = Vector2( 824.776, 504.818 )
 scale = Vector2( 0.685472, 0.580629 )
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="spoon" type="Sprite" parent="stall_items/ragda"]
-position = Vector2( 82.8666, -55.6528 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 11 )
+[node name="pos" type="Position2D" parent="stall_items/ragda"]
+position = Vector2( 75.7343, -69.338 )
 
 [node name="galla" type="Sprite" parent="stall_items"]
 position = Vector2( 950.527, 563.089 )
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="theylla" type="Sprite" parent="stall_items"]
 position = Vector2( 82.0926, 397.813 )
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="puris" type="Node2D" parent="."]
+[node name="spoon" parent="stall_items" instance=ExtResource( 11 )]
+position = Vector2( 856.046, 457.688 )
 
-[node name="Puri2" parent="puris" instance=ExtResource( 1 )]
-position = Vector2( 316.252, 548.612 )
-
-[node name="plate" type="Sprite" parent="puris"]
-visible = false
-position = Vector2( 291.625, 544.598 )
-scale = Vector2( 1.27468, 1.21189 )
-texture = ExtResource( 13 )
-
-[node name="Puri3" parent="puris/plate" instance=ExtResource( 1 )]
-position = Vector2( -8.68935, 3.47882 )
-scale = Vector2( 0.784513, 0.825156 )
-
-[node name="Puri4" parent="puris/plate" instance=ExtResource( 1 )]
-position = Vector2( 24.3504, -19.4659 )
-scale = Vector2( 0.784513, 0.825156 )
-
-[node name="Puri5" parent="puris/plate" instance=ExtResource( 1 )]
-position = Vector2( -10.3256, -13.4646 )
-scale = Vector2( 0.784513, 0.825156 )
-
-[node name="Puri6" parent="puris/plate" instance=ExtResource( 1 )]
-position = Vector2( 31.128, -4.72238 )
-scale = Vector2( 0.784513, 0.825156 )
-
-[node name="Puri7" parent="puris/plate" instance=ExtResource( 1 )]
-position = Vector2( 6.37758, -5.4162 )
-scale = Vector2( 0.784513, 0.825156 )
+[node name="Puri" parent="stall_items" instance=ExtResource( 1 )]
+position = Vector2( 333.03, 489.198 )
+scale = Vector2( 1, 0.999998 )
 
 [node name="Timers" type="Node2D" parent="."]
 

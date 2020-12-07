@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://stall_items/spoon.png" type="Texture" id=1]
+[ext_resource path="res://stall_items/spoon/spoon.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.02802
+height = 87.2489
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 10.3165
+
+[node name="spoon" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="spoon" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spoon"]
+position = Vector2( 17.8381, -22.0003 )
+rotation = 0.698132
+shape = SubResource( 1 )
+
+[node name="cup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cup"]
+position = Vector2( -30.9194, 29.7302 )
+rotation = 0.698132
+shape = SubResource( 2 )
+[connection signal="mouse_entered" from="spoon" to="." method="_on_spoon_mouse_entered"]
+[connection signal="mouse_exited" from="spoon" to="." method="_on_spoon_mouse_exited"]
+[connection signal="area_entered" from="cup" to="." method="_on_cup_area_entered"]
